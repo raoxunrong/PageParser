@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<news-conf>
+	
+	<site name="wap空中网">
+		<identifier>^http://kong.net/</identifier>
+		<enable_sequential_crawling>true</enable_sequential_crawling>
+		<site_type>wap</site_type>		
+		<threads>2</threads>	
+		<inject_score>
+			<url score="2.0f">http://kong.net/news/home.jsp</url>
+		</inject_score>
+		<inject_highest_priority_urls>
+		</inject_highest_priority_urls>			
+		<url_filter>
+			<url>-^http://kong.net/game/.*</url>		
+			<url>-^http://kong.net/mobile/.*</url>
+			<url>-^http://kong.net/stocks/stockfilter.jsp</url>
+			<url>-^http://kong.net/life/.*</url>			
+			<url>+^http://kong.net/.*</url>
+		</url_filter>
+		<channels>
+			<channel name="体育">http://kong.net/sports/.*</channel>
+			<channel name="体育">http://kong.net/2008/.*</channel>
+			<channel name="体育">http://kong.net/nba/.*</channel>			
+			<channel name="国际">http://kong.net/world/.*</channel>			
+			<channel name="财经">http://kong.net/finance/.*</channel>			
+			<channel name="娱乐">http://kong.net/yule/.*</channel>
+			<channel name="军事">http://kong.net/txzh/.*</channel>			
+		</channels>
+		<extract_origin>false</extract_origin>				
+		<parse>org.apache.nutch.parsenews.ParseNewsGuess</parse>
+	</site>	
+
+	
+
+</news-conf>
